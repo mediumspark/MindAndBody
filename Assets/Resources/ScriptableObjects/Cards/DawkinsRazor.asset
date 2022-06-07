@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0da896d25423a6b4b8e036e2ddac73b1, type: 3}
+  m_Name: DawkinsRazor
+  m_EditorClassIdentifier: 
+  CardType: 1
+  MindMod: 3
+  BodyMod: 6
+  EffectDesc: 
+  EffectName: DawkinsRazor
+  CardEffectPrefab: {fileID: 3940068901074690527, guid: 0839e93c4fc10324f9652f173b96e9cc, type: 3}
+  ForgroundSprite: {fileID: 2347332704898364386, guid: 66ea0f7bd2f2cb24d83be99fda08dac8, type: 3}

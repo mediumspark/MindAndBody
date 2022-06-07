@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72835a3ddc6a0c3488c2fe4ea8830c9a, type: 3}
+  m_Name: Garden of Madness
+  m_EditorClassIdentifier: 
+  AdventureCards:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: df3b050f20f49bd4aaf1445b1cec2fcd, type: 2}
+  - {fileID: 11400000, guid: 52b78ea6e22909543a2afd0fa6e4dce4, type: 2}
+  - {fileID: 11400000, guid: 6ee58edc0e37f1a459d3472f8e9c124a, type: 2}
+  - {fileID: 11400000, guid: 8c973c7a681307145ae09da6a7011af3, type: 2}
