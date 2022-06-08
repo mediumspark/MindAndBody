@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Used when calling the cards "use from deck" effect
+/// </summary>
 public struct CardEffectDictionary
 {
     private static Dictionary<string, CardEffectObject> Effect;

@@ -5,7 +5,9 @@ using System.Collections.Generic;
 
 
 public enum MovementDirection { Up, Right, Left, Down, nil }
-
+/// <summary>
+/// Parent for Items and Effect Cards
+/// </summary>
 public class CardEffectObject : MonoBehaviour
 {
     [SerializeField]
@@ -36,6 +38,9 @@ public class CardEffectObject : MonoBehaviour
     {
     }
 
+    /// <summary>
+    /// Used so that the cards move in the direction of the swipe before they're destroyed
+    /// </summary>
     private void Update()
     {
         switch (MD)
@@ -56,6 +61,7 @@ public class CardEffectObject : MonoBehaviour
         }
     }
 
+    //Sets the visuals for each card
     public virtual void SetCard()
     {
         Secondary = transform.GetChild(0).GetChild(0).GetComponent<Image>();
@@ -64,39 +70,10 @@ public class CardEffectObject : MonoBehaviour
         MindMod = CardBase.MindMod; 
         BodyMod = CardBase.BodyMod;
     }
-
+    //Sets the movement and time for each card
     public void MoveCard(MovementDirection MD, IEnumerator<WaitForSeconds> nextCard)
     {
         StartCoroutine(nextCard);
         this.MD = MD; 
-    }
-}
-
-public class ItemCardEffect : CardEffectObject
-{
-    public override void SetCard()
-    {
-        Secondary = transform.GetChild(0).GetChild(0).GetComponent<Image>();
-        Description = Secondary.GetComponentInChildren<TextMeshProUGUI>();
-
-        Description.text = $"{CardBase.MindMod}M/{CardBase.BodyMod}B";
-        Secondary.sprite = CardBase.ForgroundSprite;
-        MindMod = CardBase.MindMod;
-        BodyMod = CardBase.BodyMod;
-
-        UIManager.instance.DescisionResult.text = CardBase.EffectName; 
-    }
-
-    public virtual void OnUseFromDeck()
-    {
-        if (GameManager.instance.CurrentPhase == Phases.Bag)
-        {
-            PlayerStats.instance.HoldDeck.Add(CardBase);
-            return; 
-        }
-        else
-        {
-            Debug.Log("Playing card");
-        }
     }
 }

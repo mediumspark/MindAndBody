@@ -32,9 +32,12 @@ public class DeckManager : MonoBehaviour
         CreateCard(ItemDeck[0]);
     }
 
+    /// <summary>
+    /// Creates a playable card and assigns the card's game component 
+    /// </summary>
+    /// <param name="C"></param>
     public void CreateCard(Card C)
     {
-
         GameObject go = Instantiate(C.CardEffectPrefab, gameObject.transform);
 
         switch (C.EffectName)
@@ -191,6 +194,10 @@ public class DeckManager : MonoBehaviour
         CurrentCard.GetComponent<CardEffectObject>().SetCard();
     }
 
+    /// <summary>
+    /// Fills a deck depending on the phase.
+    /// Item deck gets 5 cards 
+    /// </summary>
     public void FillDeck()
     {
         if (GameManager.instance.CurrentPhase == Phases.Bag)
@@ -225,7 +232,8 @@ public class DeckManager : MonoBehaviour
                 FillDeck();
                 StartCoroutine(NextCard());
             }
-        }
+        }// Make sure decision result is hidden
+         // And *essentially* pop the ItemDeck 
         else
         {
 
@@ -235,6 +243,10 @@ public class DeckManager : MonoBehaviour
                 Destroy(CurrentCard);
                 CreateCard(AdventureDeck[0]);
             }
+
+            //Adventure Deck cards create the next adventure deck card before going to next
+            //so if the count is 0 the Adventure has been cleared
+
             else
             {
                 ItemDeck.Clear();
@@ -246,6 +258,10 @@ public class DeckManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Add the current item card to the deck
+    /// if not in item phase this command allows the user to use the top card in their deck
+    /// </summary>
     public void AddToDeck()
     {
         if (CurrentCard.TryGetComponent<ItemCardEffect>(out ItemCardEffect ItemCard))

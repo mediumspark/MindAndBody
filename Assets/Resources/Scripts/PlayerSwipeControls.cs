@@ -12,7 +12,6 @@ public class PlayerSwipeControls : MonoBehaviour
     public float swipeRange;
     public float tapRange;
 
-    // Update is called once per frame
     void Update()
     {
         Swipe();

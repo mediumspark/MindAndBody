@@ -2,6 +2,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement; 
 using TMPro; 
 
+/// <summary>
+/// Holds and manages gamestate 
+/// </summary>
 public enum Phases { Bag, Adventure }
 public class GameManager : MonoBehaviour
 {
@@ -27,7 +30,7 @@ public class GameManager : MonoBehaviour
 
     public void ReStart()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(0); //Main Menu Scene 
     }
 
     private void GameOver()
